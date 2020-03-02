@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/budget-calculator/static/css/main.79cb166d.chunk.css",
-    "main.js": "/budget-calculator/static/js/main.dfeba871.chunk.js",
-    "main.js.map": "/budget-calculator/static/js/main.dfeba871.chunk.js.map",
+    "main.css": "/budget-calculator/static/css/main.2a6921da.chunk.css",
+    "main.js": "/budget-calculator/static/js/main.59d8cf95.chunk.js",
+    "main.js.map": "/budget-calculator/static/js/main.59d8cf95.chunk.js.map",
     "runtime-main.js": "/budget-calculator/static/js/runtime-main.c9cd4332.js",
     "runtime-main.js.map": "/budget-calculator/static/js/runtime-main.c9cd4332.js.map",
     "static/css/2.c4418c31.chunk.css": "/budget-calculator/static/css/2.c4418c31.chunk.css",
     "static/js/2.6869619e.chunk.js": "/budget-calculator/static/js/2.6869619e.chunk.js",
     "static/js/2.6869619e.chunk.js.map": "/budget-calculator/static/js/2.6869619e.chunk.js.map",
     "index.html": "/budget-calculator/index.html",
-    "precache-manifest.d0dea965fee1dce26d2a228add0c3b58.js": "/budget-calculator/precache-manifest.d0dea965fee1dce26d2a228add0c3b58.js",
+    "precache-manifest.76a8b7afb516c623910435351b8644b4.js": "/budget-calculator/precache-manifest.76a8b7afb516c623910435351b8644b4.js",
     "service-worker.js": "/budget-calculator/service-worker.js",
     "static/css/2.c4418c31.chunk.css.map": "/budget-calculator/static/css/2.c4418c31.chunk.css.map",
-    "static/css/main.79cb166d.chunk.css.map": "/budget-calculator/static/css/main.79cb166d.chunk.css.map",
+    "static/css/main.2a6921da.chunk.css.map": "/budget-calculator/static/css/main.2a6921da.chunk.css.map",
     "static/js/2.6869619e.chunk.js.LICENSE.txt": "/budget-calculator/static/js/2.6869619e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c9cd4332.js",
     "static/css/2.c4418c31.chunk.css",
     "static/js/2.6869619e.chunk.js",
-    "static/css/main.79cb166d.chunk.css",
-    "static/js/main.dfeba871.chunk.js"
+    "static/css/main.2a6921da.chunk.css",
+    "static/js/main.59d8cf95.chunk.js"
   ]
 }

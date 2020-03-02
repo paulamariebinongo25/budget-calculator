@@ -4,9 +4,9 @@ import "./App.css";
 
 import ExpenseForm from "./components/form/ExpensesForm";
 import ExpenseList from "./components/list/ExpensesList";
-import AlertNotifications from "./components/message/AlertNotifications";
+import Alert from "./components/message/AlertNotifications";
 
-const App = () => {
+const App = ({ setIsDeleteModalOpen, setIsEditOpen }) => {
   const initialExpenses = localStorage.getItem("expenses")
     ? JSON.parse(localStorage.getItem("expenses"))
     : [];
@@ -14,17 +14,14 @@ const App = () => {
   const [expenses, setExpenses] = useState(initialExpenses);
   const [charge, setCharge] = useState("");
   const [amount, setAmount] = useState("");
-  const [alert, setAlert] = useState({ show: false });
-  const [edit, setEdit] = useState(false);
+  const [isAlertActive, setIsAlertActive] = useState({ show: false });
+  const [isEditActive, setIsEditActive] = useState(false);
   const [id, setId] = useState(0);
 
   useEffect(() => {
     localStorage.setItem("expenses", JSON.stringify(expenses));
   }, [expenses]);
 
-  // const handleInputChange = e => {
-  //   setInputValue({ ...inputValue, [e.target.id]: e.target.value });
-  // };
   const handleChargeInputChange = e => {
     setCharge(e.target.value);
   };
@@ -39,21 +36,21 @@ const App = () => {
   };
 
   const handleClickAlert = ({ type, text }) => {
-    setAlert({ show: true, type, text });
+    setIsAlertActive({ show: true, type, text });
     setTimeout(() => {
-      setAlert({ show: false });
+      setIsAlertActive({ show: false });
     }, 5000);
   };
 
   const handleSubmit = e => {
     e.preventDefault();
     if (charge !== "" && amount > 0) {
-      if (edit) {
+      if (isEditActive) {
         let allExpenses = expenses.map(item => {
           return item.id === id ? { ...item, charge, amount } : item;
         });
         setExpenses(allExpenses);
-        setEdit(false);
+        setIsEditActive(false);
       } else {
         const singleExpense = { id: new Date().getTime(), charge, amount };
         setExpenses([...expenses, singleExpense]);
@@ -72,6 +69,7 @@ const App = () => {
   const handleClickDelete = id => {
     let allExpenses = expenses.filter(item => item.id !== id);
     setExpenses(allExpenses);
+    setIsDeleteModalOpen = { setIsDeleteModalOpen };
     handleClickAlert({ type: "danger", text: "Item was deleted" });
   };
 
@@ -82,14 +80,17 @@ const App = () => {
   const handleClickEdit = id => {
     let expense = expenses.find(item => item.id === id);
     let { charge, amount } = expense;
+    setIsEditOpen = { setIsEditOpen };
     setCharge(charge);
     setAmount(amount);
-    setEdit(true);
+    setIsEditActive(true);
     setId(id);
   };
   return (
     <div>
-      {alert.show && <AlertNotifications type={alert.type} text={alert.text} />}
+      {isAlertActive.show && (
+        <Alert type={isAlertActive.type} text={isAlertActive.text} />
+      )}
       <div className="square column">
         <div className="level">
           <div className="level-left">
@@ -98,7 +99,7 @@ const App = () => {
                 handleSubmit={handleSubmit}
                 charge={charge}
                 amount={amount}
-                edit={edit}
+                isEditActive={isEditActive}
                 handleChargeInputChange={handleChargeInputChange}
                 handleAmountInputChange={handleAmountInputChange}
               />

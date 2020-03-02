@@ -39,12 +39,12 @@ div.square.column {
 }
 
 .alert {
-  padding: 20px;
+  padding: 10px;
   color: #fff;
   text-align: center;
   text-transform: uppercase;
   width: 50%;
-  margin: 10px auto 0 auto;
+  margin: 5px auto 0 auto;
   border-radius: 4px;
 }
 
@@ -54,4 +54,23 @@ div.square.column {
 
 .alert-success {
   background-color: #008000;
+}
+
+.modal-header {
+  background-color: #000;
+  padding: 20px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.modal-body {
+  background-color: #000;
+  padding: 30px;
+}
+
+.modal-footer {
+  background-color: #000;
+  padding: 20px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }

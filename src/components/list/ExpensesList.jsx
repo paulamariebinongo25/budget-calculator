@@ -29,7 +29,7 @@ const ExpenseList = ({
         </div>
         {expenses.length > 0 && (
           <div className="column">
-            <button className="button is-fullwidth" onClick={clearItems}>
+            <button className="button is-black is-fullwidth" onClick={clearItems}>
               Clear
             </button>
           </div>

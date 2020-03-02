@@ -6,7 +6,7 @@ const ExpensesForm = ({
   handleChargeInputChange,
   handleAmountInputChange,
   handleSubmit,
-  edit
+  isEditActive
 }) => {
   return (
     <form onSubmit={handleSubmit}>
@@ -61,7 +61,7 @@ const ExpensesForm = ({
                 className="button is-success is-rounded is-fullwidth"
                 type="submit"
               >
-                {edit ? "Edit" : "Submit"}
+                {isEditActive ? "Save Changes" : "Submit"}
               </button>
             </div>
           </div>
